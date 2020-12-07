@@ -8,7 +8,7 @@ function transactionHistoryItem({info}) {
               <tr className={styles.tdMain} id={item.id} key={i}>
                 <td><span className={styles.spanType}>{item.type}</span></td>
                 <td><span className={styles.spanAmount}>{item.amount}</span></td>
-                <td>{info.currency}</td>
+                <td>{item.currency}</td>
               </tr>
             )
       })}
