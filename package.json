@@ -15,6 +15,7 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
+  "homepage": "https://angry-hamster.github.io/goit-react-hw-01-components/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
