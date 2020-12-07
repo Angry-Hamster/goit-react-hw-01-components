@@ -1,0 +1,44 @@
+.body{
+  font-family: montserrat;
+  border: 1px solid #666;
+  padding: 0;
+  background-color: rgb(243, 243, 243);
+}
+/* background-color: rgba(245, 245, 245, 0.404); */
+.head{
+  background-color: #4aa8ff;
+  padding: 0;
+  margin: 0;
+}
+
+.thHead th{
+  height: 45px;
+  width: 220px;
+  color:  aliceblue;
+}
+
+/* .main{
+
+} */
+
+.tdMain{
+  text-align: center;
+  height: 40px;
+  background-color: rgb(243, 243, 243);
+}
+
+.tdMain:nth-child(even){
+  background-color: rgb(224, 224, 224);
+}
+
+.spanType{
+  display: inline-block;
+  width: 100px;
+  text-align: start;
+}
+
+.spanAmount{
+  display: inline-block;
+  width: 80px;
+  text-align: end;
+}
