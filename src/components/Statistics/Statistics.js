@@ -11,13 +11,7 @@ const Statistics = ({title}) => {
         <h4>{title}</h4>
         </div>
         <ul className={styles.ul} id='colorUl'>
-          {data.map((elem) => {
-            return(<li className={styles.li}>
-              {
-                <StatisticItem label={elem.label} percentage={elem.percentage} id={elem.id}/>
-              }
-            </li>)
-          })}
+          <StatisticItem data={data}/>
         </ul>
       </div>
     </>

@@ -7,11 +7,7 @@ function FriendList() {
   return (
     <>
       <ul className={styles.body}>
-      {friendInfo.map((elem) => {
-            return(
-              <FriendItem friendInfo={elem}/>
-            )
-      })}
+        <FriendItem friendInfo={friendInfo}/>
       </ul>
     </>
   );

@@ -11,9 +11,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// console.clear();
 
-// let ul = document.querySelector('.Statstscs_ul__1rbJ_')
 let ul = document.getElementById('colorUl')
 ul.childNodes.forEach(item => {
   item.style.backgroundColor = randomColor()

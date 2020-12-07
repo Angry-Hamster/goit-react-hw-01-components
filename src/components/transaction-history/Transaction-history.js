@@ -6,7 +6,7 @@ import transactionInfo from './transactions.json'
 function transactionHistory() {
   return (
     <>
-      <table class={styles.body}>
+      <table className={styles.body}>
         <thead className={styles.head}>
           <tr className={styles.thHead}>
             <th>Type</th>
@@ -16,11 +16,7 @@ function transactionHistory() {
         </thead>
 
         <tbody>
-          {transactionInfo.map(item => {
-            return(
-              <TransactionHistoryItem info={item}/>
-            )
-          })}
+          <TransactionHistoryItem info={transactionInfo}/>
         </tbody>
       </table>
     </>
