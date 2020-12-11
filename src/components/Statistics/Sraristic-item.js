@@ -1,29 +1,26 @@
 import React from "react";
+
+import PropTypes from 'prop-types';
+
 import styles from './Statstscs.module.css'
 
-const Info = ({data}) => {
+const Info = ({label, percentage, id, key}) => {
   return (
     <>
-      {data.map((elem, i) => {
-        return(<li className={styles.li} key={i}>
-          {
-            <div id={elem.id}>
-              <p className={styles.p}>{elem.label}</p>
-              <p className={styles.p}>{elem.percentage}%</p>
-            </div>
-          }
-        </li>)
-      })}
-
+     <div id={id} key={key}>
+        <p className={styles.p}>{label}</p>
+        <p className={styles.p}>{percentage}%</p>
+      </div>
     </>
   );
 };
 
-Info.defaultProps = [{
-  label: 'name',
-  percentage: '$',
-  id: 1
-}]
+Info.propTypes = {
+  label: PropTypes.string,
+  id: PropTypes.string,
+  percentage: PropTypes.number,
+  key: PropTypes.number
+}
 
 export default Info;
 

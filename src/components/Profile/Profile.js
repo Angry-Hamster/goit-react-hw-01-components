@@ -1,10 +1,11 @@
 import React from "react";
+
+import PropTypes from 'prop-types';
+
 import Info from './Info'
 import styles from './Profile.module.css'
-import userInfo from './user.json'
 
-const Profile = ({avatar, name, tag, location}) => {
-  let stats = userInfo.stats
+const Profile = ({avatar, name, tag, location, stats}) => {
   return (
     <>
       <div className={styles.body}>
@@ -22,19 +23,25 @@ const Profile = ({avatar, name, tag, location}) => {
         </div>
 
         <ul className={styles.ul} id='ul'>
-          <Info stats={stats}/>
+        {
+          Object.keys(stats).map((item, i)=>{
+            return(
+              <Info key={i} name={item} stats={stats[item]}/>
+            )
+      })
+    }
         </ul>
       </div>
     </>
   );
 };
 
-Profile.defaultProps = {
-  avatar: userInfo.avatar,
-  name: userInfo.name,
-  tag: userInfo.tag,
-  location: userInfo.location,
-  stats: userInfo.stats
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  stats: PropTypes.object
 }
 
 export default Profile;

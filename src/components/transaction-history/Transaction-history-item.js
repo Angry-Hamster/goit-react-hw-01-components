@@ -1,28 +1,24 @@
 import styles from "./style.module.css"
 
-function transactionHistoryItem({info}) {
+import PropTypes from 'prop-types';
+
+function transactionHistoryItem({type, amount, currency, key}) {
   return (
     <>
-      {info.map((item, i) => {
-            return(
-              <tr className={styles.tdMain} id={item.id} key={i}>
-                <td><span className={styles.spanType}>{item.type}</span></td>
-                <td><span className={styles.spanAmount}>{item.amount}</span></td>
-                <td>{item.currency}</td>
-              </tr>
-            )
-      })}
+      <tr className={styles.tdMain} key={key}>
+        <td><span className={styles.spanType}>{type}</span></td>
+        <td><span className={styles.spanAmount}>{amount}</span></td>
+        <td>{currency}</td>
+      </tr>
     </>
   );
 }
 
-transactionHistoryItem.defaultProps = {
-  info: [{
-    "id": "1e0700a2-5183-4291-85cc-2065a036a683",
-    "type": "invoice",
-    "amount": "964.82",
-    "currency": "LRD"
-  }]
-};
+transactionHistoryItem.propTypes = {
+  type: PropTypes.string,
+  amount: PropTypes.string,
+  currency: PropTypes.string,
+  type: PropTypes.string
+}
 
 export default transactionHistoryItem;

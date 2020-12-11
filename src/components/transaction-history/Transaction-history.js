@@ -1,9 +1,9 @@
 import styles from "./style.module.css"
+import PropTypes from 'prop-types';
 
 import TransactionHistoryItem from './Transaction-history-item.js'
-import transactionInfo from './transactions.json'
 
-function transactionHistory() {
+function transactionHistory({items}) {
   return (
     <>
       <table className={styles.body}>
@@ -16,11 +16,19 @@ function transactionHistory() {
         </thead>
 
         <tbody>
-          <TransactionHistoryItem info={transactionInfo}/>
+        {items.map((item, i) => {
+            return(
+              <TransactionHistoryItem type={item.type} amount={item.amount} currency={item.currency} key={i}/>
+            )
+        })}
         </tbody>
       </table>
     </>
   );
+}
+
+transactionHistory.propTypes = {
+  items: PropTypes.array
 }
 
 export default transactionHistory;
